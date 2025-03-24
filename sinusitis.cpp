@@ -98,11 +98,10 @@ void runDiagnosa() {
          0.0}
     };
 
-    // Nilai CF user sesuai jawaban
-    vector<double> cf_nilai_user = {-1.0, -0.8, -0.6, -0.4, 0, 0.4, 0.6, 0.8, 1.0};
-    vector<string> cf_term = {"Pasti Tidak", "Hampir Pasti Tidak", "Kemungkinan Besar Tidak", 
-                              "Mungkin Tidak", "Tidak Tahu", "Mungkin Iya", 
-                              "Kemungkinan Besar Iya", "Hampir Pasti Iya", "Pasti Iya"};
+    // Nilai CF user sesuai jawaban - UPDATED to 5 options
+    vector<double> cf_nilai_user = {-1.0, -0.4, 0, 0.4, 1.0};
+    vector<string> cf_term = {"Pasti Tidak", "Mungkin Tidak", "Tidak Tahu", 
+                              "Mungkin Iya", "Pasti Iya"};
 
     cout << "\n===================================================" << endl;
     cout << "SISTEM PAKAR DIAGNOSA PENYAKIT SINUSITIS MENGGUNAKAN" << endl;
@@ -110,11 +109,9 @@ void runDiagnosa() {
     cout << "===================================================" << endl;
     cout << "\nHalo " << nama << ", silahkan jawab pertanyaan berikut sesuai dengan gejala yang Anda alami:" << endl;
     cout << "Pilihan jawaban:" << endl;
-    cout << "1. Pasti Tidak         6. Mungkin Iya" << endl;
-    cout << "2. Hampir Pasti Tidak  7. Kemungkinan Besar Iya" << endl;
-    cout << "3. Kemungkinan Besar Tidak  8. Hampir Pasti Iya" << endl;
-    cout << "4. Mungkin Tidak       9. Pasti Iya" << endl;
-    cout << "5. Tidak Tahu" << endl << endl;
+    cout << "1. Pasti Tidak     4. Mungkin Iya" << endl;
+    cout << "2. Mungkin Tidak   5. Pasti Iya" << endl;
+    cout << "3. Tidak Tahu" << endl << endl;
 
     // Untuk menyimpan jawaban user
     map<string, int> jawaban_user;
@@ -123,11 +120,11 @@ void runDiagnosa() {
     for (int i = 0; i < gejala.size(); i++) {
         int pilihan;
         cout << i+1 << ". " << gejala[i].nama << " (" << gejala[i].kode << ")" << endl;
-        cout << "   Masukkan pilihan angka (1-9): ";
+        cout << "   Masukkan pilihan angka (1-5): ";
         
-        while (!(cin >> pilihan) || pilihan < 1 || pilihan > 9) {
+        while (!(cin >> pilihan) || pilihan < 1 || pilihan > 5) {
             clearInputBuffer();
-            cout << "   Pilihan tidak valid. Masukkan pilihan (1-9): ";
+            cout << "   Pilihan tidak valid. Masukkan pilihan (1-5): ";
         }
         
         // Simpan nilai CF user dan jawaban user
@@ -191,7 +188,7 @@ void runDiagnosa() {
     vector<pair<Gejala, int>> gejala_display;
     
     for (const auto& g : gejala) {
-        if (jawaban_user[g.kode] != 5) { // Tampilkan hanya yang tidak "Tidak Tahu"
+        if (jawaban_user[g.kode] != 3) { // Tampilkan hanya yang tidak "Tidak Tahu"
             gejala_display.push_back({g, jawaban_user[g.kode]});
         }
     }
