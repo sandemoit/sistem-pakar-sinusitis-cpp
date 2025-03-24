@@ -54,15 +54,15 @@ void runDiagnosa() {
     
     // Inisialisasi daftar gejala
     vector<Gejala> gejala = {
-        {"G001", "Hidung Tersumbat", 0.0},
-        {"G002", "Nyeri pada wajah", 0.0},
-        {"G003", "Berkurangnya daya pengecap", 0.0},
-        {"G004", "Berkurangnya daya penciuman", 0.0},
-        {"G005", "Lendir Ingus Keluar dari hidung dalam jumlah kecil terus menerus", 0.0},
-        {"G006", "Batuk", 0.0},
-        {"G007", "Demam", 0.0},
-        {"G008", "Nyeri sekitar pipi", 0.0},
-        {"G009", "Nyeri sekitar hidung", 0.0},
+        {"G01", "Hidung Tersumbat", 0.0},
+        {"G02", "Nyeri pada wajah", 0.0},
+        {"G03", "Berkurangnya daya pengecap", 0.0},
+        {"G04", "Berkurangnya daya penciuman", 0.0},
+        {"G05", "Lendir Ingus Keluar dari hidung dalam jumlah kecil terus menerus", 0.0},
+        {"G06", "Batuk", 0.0},
+        {"G07", "Demam", 0.0},
+        {"G08", "Nyeri sekitar pipi", 0.0},
+        {"G09", "Nyeri sekitar hidung", 0.0},
         {"G010", "Nyeri pada gigi/gusi", 0.0},
         {"G011", "Sakit Kepala", 0.0},
         {"G012", "Nyeri antara mata", 0.0},
@@ -75,26 +75,26 @@ void runDiagnosa() {
     // Created by Voni Puspita Sari
     vector<Penyakit> penyakit = {
         {"P001", "Sinusitis Frontalis", 
-         {"G001", "G002", "G003", "G004", "G007", "G011", "G013", "G014"}, 
-         {{"G001", 0.4}, {"G002", 0.6}, {"G003", 0.4}, {"G004", 0.6},
-          {"G007", 0.4}, {"G011", 0.4}, {"G013", 0.6}, {"G014", 0.6}}, 
+         {"G01", "G02", "G03", "G04", "G07", "G011", "G013", "G014"}, 
+         {{"G01", 0.4}, {"G02", 0.6}, {"G03", 0.4}, {"G04", 0.6},
+          {"G07", 0.4}, {"G011", 0.4}, {"G013", 0.6}, {"G014", 0.6}}, 
          0.0},
         
         {"P002", "Sinusitis Maksilaris", 
-         {"G001", "G002", "G003", "G005", "G008", "G010", "G011", "G015"}, 
-         {{"G001", 0.4}, {"G002", 0.6}, {"G003", 0.6}, {"G005", 0.6},
-          {"G008", 0.6}, {"G010", 0.6}, {"G011", 0.4}, {"G015", 0.6}}, 
+         {"G01", "G02", "G03", "G05", "G08", "G010", "G011", "G015"}, 
+         {{"G01", 0.4}, {"G02", 0.6}, {"G03", 0.6}, {"G05", 0.6},
+          {"G08", 0.6}, {"G010", 0.6}, {"G011", 0.4}, {"G015", 0.6}}, 
          0.0},
         
         {"P003", "Sinusitis Etmoidalis", 
-         {"G001", "G002", "G003", "G004", "G006", "G009", "G012"}, 
-         {{"G001", 0.6}, {"G002", 0.6}, {"G003", 0.4}, {"G004", 0.6},
-          {"G006", 0.6}, {"G009", 0.6}, {"G012", 0.6}}, 
+         {"G01", "G02", "G03", "G04", "G06", "G09", "G012"}, 
+         {{"G01", 0.6}, {"G02", 0.6}, {"G03", 0.4}, {"G04", 0.6},
+          {"G06", 0.6}, {"G09", 0.6}, {"G012", 0.6}}, 
          0.0},
         
         {"P004", "Sinusitis Sfenoidalis", 
-         {"G001", "G002", "G011", "G014"}, 
-         {{"G001", 0.4}, {"G002", 0.4}, {"G011", 0.6}, {"G014", 0.6}}, 
+         {"G01", "G02", "G011", "G014"}, 
+         {{"G01", 0.4}, {"G02", 0.4}, {"G011", 0.6}, {"G014", 0.6}}, 
          0.0}
     };
 
